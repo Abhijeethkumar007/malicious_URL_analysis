@@ -6,35 +6,67 @@ body {
     background-image: url("/static/images/bgimage.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed; /* Keep background fixed on scroll */
+    color: #333; /* Improved color contrast */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensures full height coverage */
 }
 
 .container {
-    max-width: 400px;
+    max-width: 450px; /* Slightly increased width for better content display */
     margin: 40px auto;
-    padding: 20px;
-    background-color: #fff;
+    padding: 30px; /* Increased padding for better spacing */
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent background for a modern look */
     border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px; /* Increased radius for smoother edges */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow for depth */
+    text-align: center; /* Center-align content inside the container */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for interaction effects */
+}
+
+.container:hover {
+    transform: translateY(-5px); /* Subtle lift effect on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover for emphasis */
 }
 
 h1 {
-    color: #333;
-    margin-bottom: 10px;
+    color: #222; /* Slightly darker color for better contrast */
+    font-size: 28px; /* Increased font size for better readability */
+    margin-bottom: 16px; /* Increased margin for better spacing */
 }
 
 p {
     font-size: 18px;
-    color: #666;
-    margin-bottom: 20px;
+    color: #555; /* Adjusted color for better contrast */
+    line-height: 1.6; /* Improved line height for better readability */
+    margin-bottom: 24px; /* Increased margin for more spacing between elements */
 }
 
 a {
+    font-weight: bold; /* Emphasize links */
     text-decoration: none;
-    color: #337ab7;
+    color: #007bff; /* Updated color for better visibility */
+    transition: color 0.3s ease; /* Smooth transition for color change */
 }
 
 a:hover {
-    color: #23527c;
+    color: #0056b3; /* Darker shade on hover for better interaction feedback */
 }
 
+@media (max-width: 600px) {
+    .container {
+        padding: 20px; /* Reduced padding on smaller screens */
+        margin: 20px auto; /* Reduced margin for better fit */
+    }
+
+    h1 {
+        font-size: 24px; /* Adjusted heading size for small screens */
+    }
+
+    p {
+        font-size: 16px; /* Adjusted paragraph size for readability on smaller devices */
+    }
+}
