@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Analysis</title>
+    <link rel="stylesheet" href='/static/styles.css'>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">URL Analysis</h1>
+        <div class="form-container">
+            <form action="/predict" method="post">
+                <label for="url">Enter URL:</label>
+                <input type="text" id="url" name="url" placeholder="https://example.com">
+                <button type="submit">Check</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
