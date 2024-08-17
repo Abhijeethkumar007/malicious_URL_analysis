@@ -1,3 +1,10 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/images/bgimage.jpg") no-repeat center center fixed;
@@ -11,40 +18,53 @@ body {
 }
 
 .container {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly more opaque for better readability */
+    border-radius: 16px; /* Increased radius for a smoother look */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
     padding: 40px;
     text-align: center;
-    max-width: 500px;
+    max-width: 450px; /* Reduced width for better focus */
     width: 100%;
-    animation: fadeIn 1s ease-in-out;
+    animation: fadeIn 0.8s ease-in-out; /* Faster and smoother animation */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Added transitions for smoothness */
+}
+
+.container:hover {
+    transform: scale(1.02); /* Slight scaling effect on hover */
+    background-color: rgba(255, 255, 255, 1); /* Background becomes fully opaque on hover */
 }
 
 h1 {
-    font-size: 32px;
-    color: #333;
-    margin-bottom: 20px;
+    font-size: 36px; /* Larger font size for emphasis */
+    color: #222; /* Slightly darker color for contrast */
+    margin-bottom: 24px;
 }
 
 label {
     display: block;
-    font-size: 16px;
-    margin-bottom: 8px;
-    color: #333;
+    font-size: 18px; /* Larger label font */
+    margin-bottom: 10px;
+    color: #444;
 }
 
 input[type="text"],
 button[type="submit"] {
-    width: calc(100% - 30px); /* Ensure the width is the same for both elements */
-    padding: 12px;
-    margin-bottom: 16px;
+    width: calc(100% - 24px); /* Reduced width to balance padding */
+    padding: 14px; /* Increased padding for a more comfortable touch experience */
     font-size: 16px;
     border-radius: 8px;
+    margin-bottom: 20px;
 }
 
 input[type="text"] {
-    border: 1px solid #ccc;
+    border: 1px solid #bbb; /* Lighter border color */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #007bff; /* Highlighted border color */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3); /* Subtle shadow for focus */
+    outline: none;
 }
 
 button[type="submit"] {
@@ -52,19 +72,24 @@ button[type="submit"] {
     color: #fff;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    padding: 12px; /* Same padding as input */
-    margin-top: 0; /* Remove extra margin from button */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 14px;
+    font-weight: bold; /* Bold text for emphasis */
 }
 
 button[type="submit"]:hover {
     background-color: #0056b3;
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+button[type="submit"]:active {
+    transform: translateY(0); /* Return to original position on click */
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(30px); /* Increased starting position for a more noticeable effect */
     }
     to {
         opacity: 1;
@@ -74,12 +99,14 @@ button[type="submit"]:hover {
 
 @media (max-width: 600px) {
     .container {
-        padding: 20px;
+        padding: 24px; /* Adjusted padding for smaller screens */
     }
     h1 {
-        font-size: 28px;
+        font-size: 30px; /* Slightly reduced heading size */
     }
-    input[type="text"], button[type="submit"] {
-        font-size: 14px;
+    input[type="text"], 
+    button[type="submit"] {
+        font-size: 15px; /* Adjusted font size for readability on small screens */
+        padding: 12px;
     }
 }
